@@ -29,7 +29,6 @@
     import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
     import { getFirestore, collection, onSnapshot, addDoc, deleteDoc, doc, updateDoc, setDoc } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
 
-    // Chaves oficiais da Delícia da Mika inseridas aqui!
     const firebaseConfig = {
       apiKey: "AIzaSyC5ch3CCEHK-OuoqxF6xyJIOAPtahkbboA",
       authDomain: "delicia-da-mika.firebaseapp.com",
@@ -59,8 +58,9 @@
   <script type="text/babel">
     const { useState, useEffect, useRef } = React;
     const WHATSAPP_NUMBER = "5511999999999"; 
-    // Ícone de bolo provisório para a logo
-    const LOGO_URL = "https://cdn-icons-png.flaticon.com/512/3014/3014513.png"; 
+    
+    // Logo oficial ajustada com encaixe circular perfeito
+    const LOGO_URL = "./logo.jpg"; 
 
     const playBeep = () => {
       try {
@@ -94,7 +94,6 @@
       const [deliveryFee, setDeliveryFee] = useState(5.00);
       const [pixKeyConfig, setPixKeyConfig] = useState("11999999999 (Chave Pix Exemplo)");
       
-      // Categorias da Confeitaria
       const [customCategories, setCustomCategories] = useState(['Bolos', 'Doces Finos', 'Sobremesas', 'Bebidas']);
       const [addons, setAddons] = useState([]);
       const [motoboys, setMotoboys] = useState([]);
@@ -674,7 +673,6 @@
         setTimeout(() => { iframe.contentWindow.focus(); iframe.contentWindow.print(); }, 500);
       };
 
-      // --- LÓGICA DE ORDENAÇÃO DE CATEGORIAS DA CONFEITARIA ---
       const predefinedCatOrder = ['Bolos', 'Doces Finos', 'Sobremesas', 'Bebidas'];
       
       const sortedCustomCategories = [...customCategories].sort((a, b) => {
@@ -874,10 +872,13 @@
 
           {view === 'menu' && (
             <div className="w-full max-w-md mx-auto relative bg-zinc-950 min-h-screen shadow-2xl">
+              
+              {/* CABEÇALHO COM LOGO OFICIAL ENCAIXADA PERFEITAMENTE */}
               <header className="bg-zinc-900 rounded-b-[2.5rem] pt-12 pb-8 px-6 shadow-2xl relative z-10 flex flex-col items-center">
-                <img src={LOGO_URL} alt="Logo" className="w-28 h-28 object-contain mb-4 drop-shadow-[0_0_15px_rgba(245,158,11,0.5)]" onError={(e) => e.target.style.display = 'none'} />
-                <h1 className="text-3xl font-black text-white tracking-tight">DELÍCIA DA <span className="text-amber-500">MIKA</span></h1>
-                <p className="text-zinc-400 text-sm mt-1">Confeitaria Artesanal</p>
+                <div className="w-44 h-44 md:w-52 md:h-52 rounded-full overflow-hidden border-[3px] border-zinc-800 shadow-[0_0_35px_rgba(224,115,135,0.4)] mb-4 bg-[#362120] flex items-center justify-center relative">
+                  <img src={LOGO_URL} alt="Delícias da Mika" className="w-full h-full object-cover scale-[1.05]" onError={(e) => e.target.style.display = 'none'} />
+                </div>
+                <p className="text-[#e07387] font-black text-xs mt-2 tracking-[0.25em] uppercase">Doces Artesanais</p>
               </header>
 
               <div className="sticky top-0 z-20 bg-zinc-950/90 backdrop-blur-md pt-4 pb-2 border-b border-zinc-800">
@@ -1732,7 +1733,6 @@
                 </div>
               )}
 
-              {/* BARRA DE NAVEGAÇÃO DO PDV COM CONTROLE DE ACESSO */}
               <nav className="fixed bottom-0 w-full max-w-md bg-white border-t border-zinc-200 z-30">
                 <div className="flex justify-around p-2">
                   <button onClick={() => setPdvTab('orders')} className={`font-bold p-1 text-[11px] ${pdvTab === 'orders' ? 'text-amber-500' : 'text-zinc-400'}`}>Pedidos</button>
