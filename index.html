@@ -59,8 +59,8 @@
     const { useState, useEffect, useRef } = React;
     const WHATSAPP_NUMBER = "5511999999999"; 
     
-    // Logo oficial ajustada com encaixe circular perfeito
-    const LOGO_URL = "./logo.jpg"; 
+    // Link direto oficial da logo no GitHub
+    const LOGO_URL = "https://raw.githubusercontent.com/danymalagutti65-web/App-Mika/main/logo.jpg"; 
 
     const playBeep = () => {
       try {
@@ -873,10 +873,10 @@
           {view === 'menu' && (
             <div className="w-full max-w-md mx-auto relative bg-zinc-950 min-h-screen shadow-2xl">
               
-              {/* CABEÇALHO COM LOGO OFICIAL ENCAIXADA PERFEITAMENTE */}
+              {/* CABEÇALHO COM LOGO OFICIAL (LINK DIRETO RAW DO GITHUB) */}
               <header className="bg-zinc-900 rounded-b-[2.5rem] pt-12 pb-8 px-6 shadow-2xl relative z-10 flex flex-col items-center">
-                <div className="w-44 h-44 md:w-52 md:h-52 rounded-full overflow-hidden border-[3px] border-zinc-800 shadow-[0_0_35px_rgba(224,115,135,0.4)] mb-4 bg-[#362120] flex items-center justify-center relative">
-                  <img src={LOGO_URL} alt="Delícias da Mika" className="w-full h-full object-cover scale-[1.05]" onError={(e) => e.target.style.display = 'none'} />
+                <div className="w-44 h-44 md:w-52 md:h-52 rounded-full overflow-hidden border-[3px] border-zinc-800 shadow-[0_0_35px_rgba(224,115,135,0.4)] mb-4 bg-zinc-900 flex items-center justify-center relative">
+                  <img src={LOGO_URL} alt="Delícias da Mika" className="w-full h-full object-cover scale-[1.05]" />
                 </div>
                 <p className="text-[#e07387] font-black text-xs mt-2 tracking-[0.25em] uppercase">Doces Artesanais</p>
               </header>
